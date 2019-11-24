@@ -27,7 +27,7 @@ class DynamicIntArrayTest {
 		
 		dia.set(25, 1);
 		
-		assertEquals(1, dia.get(0));
+
 		assertEquals(25, dia.get(1));
 		assertEquals(3, dia.get(2));
 	}
