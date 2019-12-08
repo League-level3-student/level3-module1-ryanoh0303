@@ -5,9 +5,16 @@ import java.util.HashMap;
 public class _01_IntroToHashMaps {
 	public static void main(String[] args) {
 		//1. Create a HashMap called roots with Integers for the keys and Doubles for the values.
+		HashMap<Integer, Double> hash= new HashMap<Integer,Double>();
 
 		//2. Using a for-loop, add 500 entries to your HashMap. The key entry will be the 
 		//   current iteration of the loop (i). The value entry will be the square root of i.
+		for(int i=0; i<500; i++) {
+			hash.put(i, Math.sqrt(i));
+		}
+		for(int i=0; i<500;i++) {
+			System.out.println("Square root of "+ i +" is "+ hash.get(i));
+		}
 
 		//3. Iterate through all the entries in your HashMap displaying the keys with their respective
 		//   square roots (values). Use the following format.

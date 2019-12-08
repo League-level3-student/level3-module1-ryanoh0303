@@ -6,6 +6,7 @@ import java.util.Random;
 import javax.swing.JOptionPane;
 
 public class _05_LongChipCompetition {
+	static String Beatlelongestchip;
 	/**
 	 * The Beatles are eating lunch and playing a game to see who has the longest
 	 * chip. (In England, french fries are called "chips".) * Find the Beatle with
@@ -17,6 +18,17 @@ public class _05_LongChipCompetition {
 	public static void main(String[] args) {
 		_05_LongChipCompetition lcc = new _05_LongChipCompetition();
 		lcc.initializeBeatles();
+		
+		double longestChip=0;
+		for(int i=0; i<lcc.theBeatles.size(); i++) {
+			 for(int j=0; j<lcc.theBeatles.get(i).getChips().size(); j++) {
+				 if(lcc.theBeatles.get(i).getChips().get(j).getLength()>longestChip) {
+					 Beatlelongestchip=lcc.theBeatles.get(i).getName();
+					 longestChip=lcc.theBeatles.get(i).getChips().get(j).getLength();
+				 }
+			 }
+		}
+		System.out.println(Beatlelongestchip);
 		
 		
 	}
