@@ -9,10 +9,10 @@ public class _01_IntroToHashMaps {
 
 		//2. Using a for-loop, add 500 entries to your HashMap. The key entry will be the 
 		//   current iteration of the loop (i). The value entry will be the square root of i.
-		for(int i=0; i<500; i++) {
+		for(int i=0; i<=500; i++) {
 			hash.put(i, Math.sqrt(i));
 		}
-		for(int i=0; i<500;i++) {
+		for(int i=0; i<=500;i++) {
 			System.out.println("Square root of "+ i +" is "+ hash.get(i));
 		}
 

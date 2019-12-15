@@ -19,9 +19,27 @@ public class StringIntegerPair {
 		//   passed in value and return from the method.
 		for(int i=0; i<keys.length; i++) {
 			if((""+key.charAt(i)).equals(key)) {
-				
+				i=value;
+				return;
 			}
 		}
+		String[] arr= new String[keys.length+1];
+		
+		int[] arr2= new int[values.length+1];
+		
+		arr[arr.length-1]=key;
+		
+		arr2[arr2.length-1]=value;
+		for(int i=0; i<keys.length; i++) {
+			arr[i]=keys[i];
+			
+		}
+		for(int i=0; i<values.length; i++) {
+			arr2[i]=values[i];
+			
+		}
+		keys=arr;
+		values=arr2;
 		
 		//B. create a String array that is one element longer than the keys
 		
@@ -39,30 +57,50 @@ public class StringIntegerPair {
 	//5. Complete the method so it returns the value located at the passed in key.
 	//   If the key does not exist, return Integer.MIN_VALUE.
 	public int get(String key) {
-		return 0;
+		int k=Integer.MIN_VALUE;
+		if(containsKey(key)==true) {
+			for(int i=0; i<keys.length; i++) {
+				if(keys[i].equals(key)){
+					k=values[i];
+				}
+			}
+		}
+		return k;
+		
 	}
 	
 	//6. Complete the containsKey method so that it returns true if the
 	//   passed in keys is contained in the keys array
 	public boolean containsKey(String key) {
-		
-		return false;
+		boolean x=false;
+		for(int i=0; i<keys.length; i++) {
+			if(keys[i].equals(key)) {
+				x=true;
+			}
+		}
+		return x;
 	}
 	
 	//7. Complete the containsValue method so that it returns true if the
 	//   passed in value is contained in the values array
 	public boolean containsValue(int value) {
+		boolean x= false;
+		for(int i=0; i<values.length; i++) {
+			if(values[i]==value) {
+				x=true;
+			}
+		}
 		
-		return false;
+		return x;
 	}
 	
 	//8. Complete the getKeysMethod so it returns the keys as an array
 	public String[] getKeys() {
-		return null;
+		return keys;
 	}
 	
 	//9. Complete the getValues so it returns the values as an array
 	public int[] getValues() {
-		return null;
+		return values;
 	}
 }
